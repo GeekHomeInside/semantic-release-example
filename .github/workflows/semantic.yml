@@ -4,7 +4,8 @@ on: [push]
 
 jobs:
   semantic-release:
-    run-on: ubuntu-latest
+    
+    runs-on: ubuntu-latest
 
     container:
       image: docker://node:latest
