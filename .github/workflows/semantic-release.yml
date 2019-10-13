@@ -1,9 +1,6 @@
 name: semantic-release
 
-on:
-  push:
-    branches:
-    - master
+on: push
 
 jobs:
   docker_image:
@@ -16,3 +13,5 @@ jobs:
       run: npm install semantic-release @semantic-release/{git,changelog,gitlab} conventional-changelog -D
     - name: Launch semantic
       run: npx semantic-release -p
+      env:
+        - GH_TOKEN: $GH_TOKEN
