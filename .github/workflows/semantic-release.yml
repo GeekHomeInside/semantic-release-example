@@ -5,6 +5,8 @@ on: push
 jobs:
   docker_image:
     runs-on:  ubuntu-latest
+    env: 
+      - ${{ secrets.GITHUB_TOKEN }}
     steps:
     - uses: actions/checkout@v1
     - name: Add nodejs to PPA
@@ -13,5 +15,3 @@ jobs:
       run: npm install semantic-release @semantic-release/{git,changelog,gitlab} conventional-changelog -D
     - name: Launch semantic
       run: npx semantic-release -p
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
