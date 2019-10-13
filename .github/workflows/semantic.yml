@@ -1,0 +1,19 @@
+name: semantic-release
+
+on: [push]
+
+jobs:
+  semantic-release:
+    run-on: ubuntu-latest
+
+    container:
+      image: docker://node:latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install dependencies
+      run: install semantic-release @semantic-release/{git,changelog,gitlab} conventional-changelog -D
+
+    - name: Launch semantic
+      run: npx semantic-release -p
