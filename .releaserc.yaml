@@ -1,5 +1,5 @@
 ---
-branch: feature/changelog
+branch: master
 preset: "angular"
 tagFormat: "${version}"
 
@@ -72,7 +72,7 @@ prepare:
       - path: 'CHANGELOG.md'
 
 publish:
-  - path: '@semantic-release/gitlab'
+#  - path: '@semantic-release/gitlab'
 
-success: false
-fail: false
+#success: false
+#fail: false
