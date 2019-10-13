@@ -1,5 +1,5 @@
 ---
-branch: update
+branch: master
 preset: "angular"
 tagFormat: "${version}"
 plugins:
