@@ -3,7 +3,7 @@ name: semantic-release
 on:
   push:
     branches:
-    - gitact
+    - master
 
 jobs:
   docker_image:
