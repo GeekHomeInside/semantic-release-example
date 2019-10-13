@@ -7,10 +7,12 @@ on:
 
 jobs:
   docker_image:
-    runs-on: node:10.16-jessie
+    runs-on:  ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: install plugins for semantic-release
+    - name: Add nodejs to PPA
+      run: sudo apt-get install curl && curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+    - name: Install plugins for semantic-release
       run: npm install semantic-release @semantic-release/{git,changelog,gitlab} conventional-changelog -D
-    - name: launch semantic
+    - name: Launch semantic
       run: npx semantic-release -p
