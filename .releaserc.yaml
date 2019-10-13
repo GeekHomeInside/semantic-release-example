@@ -2,9 +2,6 @@
 branch: master
 preset: "angular"
 tagFormat: "${version}"
-
-#extends:
-#  - "@semantic-release/gitlab-config"
 plugins:
   - "@semantic-release/commit-analyzer"
   - "@semantic-release/release-notes-generator"
@@ -60,19 +57,16 @@ generateNotes:
     - hidden: true
     - type: "test"
     - hidden: true
+    presetConfig: true
 prepare:
-  - path: '@semantic-release/git'
-  - path: '@semantic-release/changelog'
-    changelogTitle: |-
-        # Change Log
-
-        All notable changes to this project will be documented in this file.
-        See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-    assets:
-      - path: 'CHANGELOG.md'
+  - path: "@semantic-release/git"
+  - path: "@semantic-release/changelog"
 
 publish:
   - path: "@semantic-release/github"
 
-#success: false
-#fail: false
+success:
+  - "@semantic-release/github"
+
+fail:
+  - "@semantic-release/github"
