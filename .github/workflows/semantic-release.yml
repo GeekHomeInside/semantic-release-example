@@ -5,12 +5,12 @@ on: push
 jobs:
   semantic-release:
     container: 
-    image: nodes:latest
-    env:
-      - GH_TOKEN: ${{ GH_TOKEN }}
-    steps:
-    - uses: actions/checkout@v1
-    - name: Install plugins for semantic-release
-      run: npm install semantic-release @semantic-release/{git,changelog,gitlab} conventional-changelog -D
-    - name: Launch semantic
-      run: npx semantic-release -p
+      image: nodes:latest
+      env:
+        - GH_TOKEN: ${{ GH_TOKEN }}
+      steps:
+      - uses: actions/checkout@v1
+      - name: Install plugins for semantic-release
+        run: npm install semantic-release @semantic-release/{git,changelog,gitlab} conventional-changelog -D
+      - name: Launch semantic
+        run: npx semantic-release -p
