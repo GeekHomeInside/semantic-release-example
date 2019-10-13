@@ -14,4 +14,4 @@ jobs:
     - name: Launch semantic
       run: npx semantic-release -p
       env: 
-      - GITHUB_TOKEN: $GITHUB_TOKEN
+      - GITHUB_TOKEN: ${{ GITHUB_TOKEN }}
