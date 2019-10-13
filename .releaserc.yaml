@@ -3,8 +3,8 @@ branch: master
 preset: "angular"
 tagFormat: "${version}"
 
-extends:
- - "@semantic-release/gitlab-config"
+#extends:
+#  - "@semantic-release/gitlab-config"
 plugins:
   - "@semantic-release/commit-analyzer"
   - "@semantic-release/release-notes-generator"
