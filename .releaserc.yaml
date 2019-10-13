@@ -61,8 +61,7 @@ generateNotes:
 prepare:
   - path: "@semantic-release/git"
   - path: "@semantic-release/changelog"
-    changelogFile:
-      - "CHANGELOG.md"
+    changelogFile: "CHANGELOG.md"
 publish:
   - path: "@semantic-release/github"
 
