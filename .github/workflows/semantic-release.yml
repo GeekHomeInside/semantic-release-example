@@ -1,0 +1,16 @@
+name: semantic-release
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  docker_image:
+    runs-on: nodes-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: install plugins for semantic-release
+      run: npm install semantic-release @semantic-release/{git,changelog,gitlab} conventional-changelog -D
+    - name: launch semantic
+      run: npx semantic-release -p
