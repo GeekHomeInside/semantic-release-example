@@ -60,6 +60,7 @@ generateNotes:
     - hidden: true
     - type: "test"
     - hidden: true
+    presetConfig:
 prepare:
   - path: '@semantic-release/git'
   - path: '@semantic-release/changelog'
