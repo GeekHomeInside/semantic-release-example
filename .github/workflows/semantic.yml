@@ -17,6 +17,7 @@ jobs:
       run: npm install semantic-release @semantic-release/git @semantic-release/changelog @semantic-release/gitlab conventional-changelog -D
 
     - name: Launch semantic
-      run: npx semantic-release -p --dry-run
+      run: npx semantic-release -p --dry-run --branch $GITHUB_REF
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_REF: ${{ GITHUB_REF }}
