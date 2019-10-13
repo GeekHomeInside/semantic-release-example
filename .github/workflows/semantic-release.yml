@@ -1,9 +1,9 @@
 name: semantic-release
 
-# on:
-#   push:
-#     branches:
-#     - master
+on:
+  push:
+    branches:
+    - gitact
 
 jobs:
   docker_image:
