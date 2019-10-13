@@ -7,7 +7,7 @@ on:
 
 jobs:
   docker_image:
-    runs-on: nodes-latest
+    runs-on: node:10.16-jessie
     steps:
     - uses: actions/checkout@v1
     - name: install plugins for semantic-release
