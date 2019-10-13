@@ -6,7 +6,7 @@ jobs:
   docker_image:
     runs-on:  ubuntu-latest
     env: 
-      - ${{ secrets.GITHUB_TOKEN }}
+      - $GITHUB_TOKEN
     steps:
     - uses: actions/checkout@v1
     - name: Add nodejs to PPA
