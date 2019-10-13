@@ -1,9 +1,6 @@
 name: semantic-release
 
-on:
-  push:
-    branches:
-    - master
+on: push
 
 jobs:
   docker_image:
@@ -15,6 +12,6 @@ jobs:
     - name: Install plugins for semantic-release
       run: npm install semantic-release @semantic-release/{git,changelog,gitlab} conventional-changelog -D
     - name: Launch semantic
+      run: npx semantic-release -p
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-      run: npx semantic-release -p
