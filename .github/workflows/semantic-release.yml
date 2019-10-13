@@ -15,4 +15,6 @@ jobs:
     - name: Install plugins for semantic-release
       run: npm install semantic-release @semantic-release/{git,changelog,github} conventional-changelog -D
     - name: Launch semantic
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
       run: npx semantic-release -p
