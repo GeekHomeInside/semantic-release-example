@@ -1,9 +1,9 @@
 name: semantic-release
 
-on:
-  push:
-    branches:
-    - master
+# on:
+#   push:
+#     branches:
+#     - master
 
 jobs:
   docker_image:
