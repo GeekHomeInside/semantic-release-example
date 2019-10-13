@@ -20,4 +20,4 @@ jobs:
       run: npx semantic-release -p --dry-run --branch $GITHUB_REF
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_REF: ${{ GITHUB_REF }}
+        GITHUB_REF: ${{ github.ref }}
