@@ -1,10 +1,7 @@
 ---
-# branch: master
+branch: update
 preset: "angular"
 tagFormat: "${version}"
-
-#extends:
-#  - "@semantic-release/gitlab-config"
 plugins:
   - "@semantic-release/commit-analyzer"
   - "@semantic-release/release-notes-generator"
@@ -60,7 +57,7 @@ generateNotes:
     - hidden: true
     - type: "test"
     - hidden: true
-    presetConfig:
+    presetConfig: true
 prepare:
   - path: "@semantic-release/git"
   - path: "@semantic-release/changelog"
@@ -68,5 +65,8 @@ prepare:
 publish:
   - path: "@semantic-release/github"
 
-#success: false
-#fail: false
+success:
+  - "@semantic-release/github"
+
+fail:
+  - "@semantic-release/github"
