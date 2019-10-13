@@ -5,7 +5,7 @@ on: push
 jobs:
   semantic-release:
     container: 
-    images: nodes:latest
+    image: nodes:latest
     env:
       - GH_TOKEN: ${{ GH_TOKEN }}
     steps:
