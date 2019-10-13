@@ -3,15 +3,13 @@ name: semantic-release
 on: push
 
 jobs:
-  docker_image:
-    runs-on:  ubuntu-latest
+  semantic-release:
+    container: nodes:latest
+    env:
+      - GH_TOKEN: ${{ GH_TOKEN }}
     steps:
     - uses: actions/checkout@v1
-    - name: Add nodejs to PPA
-      run: sudo apt-get install curl && curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
     - name: Install plugins for semantic-release
       run: npm install semantic-release @semantic-release/{git,changelog,gitlab} conventional-changelog -D
     - name: Launch semantic
       run: npx semantic-release -p
-      env:
-        - GH_TOKEN: ${{ GH_TOKEN }}
