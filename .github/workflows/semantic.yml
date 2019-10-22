@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: docker://njmaeff/semantic-release-docker:latest
+      image: docker://cclorg/semantic-release
 
     steps:
     - uses: actions/checkout@v1
 
     - name: Install dependencies
-      run: npm install @semantic-release/git @semantic-release/changelog @semantic-release/github -D
+      run: npm install @semantic-release/github -D
 
     - name: Launch semantic
       run: npx semantic-release -p
